@@ -1,5 +1,7 @@
 package com.sptech.school;
 import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Main {
     public static Scanner Scanner = new Scanner(System.in);
@@ -21,7 +23,6 @@ public class Main {
                 2- Sacar dinheiro
                 3- Quebrar cofrinho (monstro!!)
                 4- Sacudir cofrinho
-                5- Criar um novo cofrinho
                 """);
 
         int resposta = Scanner.nextInt();

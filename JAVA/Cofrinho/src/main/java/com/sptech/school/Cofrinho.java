@@ -9,7 +9,7 @@ public class Cofrinho{
     public Cofrinho(String dono){
         cofrinho_quebrado = false;
         saldo = 0.0;
-        this.dono = dono;
+        this.dono = getDono(dono);
     }
 
     public static void depositar(Cofrinho cofre, double valor){
@@ -25,6 +25,7 @@ public class Cofrinho{
                 System.out.println("A quantidade digitada é maior que seu saldo atual");
             } else if (cofre.cofrinho_quebrado) {
                 System.out.println("Não pode sacar de um cofrinho quebrado");
+                System.out.println("Agora voçê tem R$ " + cofre.saldo);
             }
         return cofre.saldo -= valor;
     }
@@ -34,7 +35,7 @@ public class Cofrinho{
             System.out.println("Esse cofrinho já foi quebrado");
         } else {
             System.out.println("Seu cofrinho foi quebrado");
-            return cofre.cofrinho_quebrado == true;
+            return cofre.cofrinho_quebrado ==  true;
         }
         return false;
     }
@@ -50,8 +51,25 @@ public class Cofrinho{
         return 0;
     }
 
-    public static void CriarCofre(String dono){
-        System.out.println("Digite o nome do cofrinho:");
+    public String getDono(String dono){
 
+        return setDono(dono);
+    }
+
+    public String setDono(String dono){
+        this.dono =  dono;
+        return dono;
+    }
+
+    public static double getSaldo(Cofrinho cofre){
+        double saldo_atual = cofre.saldo;
+        return saldo_atual;
+    }
+
+    public static boolean getQuebrado(Cofrinho cofre){
+        if (cofre.cofrinho_quebrado){
+            return true;
+        }
+        return false;
     }
 }
